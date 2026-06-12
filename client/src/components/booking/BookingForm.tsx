@@ -8,7 +8,7 @@ import BookingSummary from './BookingSummary'
 
 const STEPS = ['Serviço', 'Profissional', 'Data & Hora', 'Confirmação']
 
-export default function BookingForm() {
+export default function BookingForm({ initialCategory }: { initialCategory?: string }) {
   const [step, setStep] = useState(0)
 
   return (
@@ -37,7 +37,7 @@ export default function BookingForm() {
         ))}
       </div>
 
-      {step === 0 && <ServicePicker onNext={() => setStep(1)} />}
+      {step === 0 && <ServicePicker category={initialCategory} onNext={() => setStep(1)} />}
       {step === 1 && <StaffPicker onBack={() => setStep(0)} onNext={() => setStep(2)} />}
       {step === 2 && <DateTimePicker onBack={() => setStep(1)} onNext={() => setStep(3)} />}
       {step === 3 && <BookingSummary onBack={() => setStep(2)} />}
