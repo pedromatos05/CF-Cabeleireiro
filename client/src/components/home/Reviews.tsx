@@ -112,7 +112,7 @@ export default function Reviews() {
     Math.round((reviews.reduce((s, r) => s + r.rating, 0) / reviews.length) * 10) / 10
 
   return (
-    <section className="bg-cream-50 py-20">
+    <section className="bg-gradient-to-b from-cream-50 to-white py-20">
       <div className="container mx-auto px-4">
         <h2 className="mb-3 text-center text-3xl font-bold text-brown-800">
           O que dizem os clientes

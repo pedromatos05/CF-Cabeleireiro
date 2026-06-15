@@ -12,11 +12,8 @@ export default async function BookingPage({
     : undefined
 
   return (
-    <div className="container mx-auto px-4 py-16">
-      <h1 className="mb-4 text-4xl font-bold text-brown-800">Marcar Consulta</h1>
-      <p className="mb-8 text-brown-500">
-        Escolha o serviço, o profissional, a data e a hora — em apenas 4 passos.
-      </p>
+    <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
+      <h1 className="mx-auto mb-8 max-w-4xl text-4xl font-bold text-brown-800">Marcar Marcação</h1>
       <BookingForm initialCategory={initialCategory} />
     </div>
   )

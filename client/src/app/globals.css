@@ -3,8 +3,18 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    font-size: 18px;
+  }
   body {
     background-color: #FDFAF4;
     color: #261508;
+    font-family: var(--font-sans), system-ui, sans-serif;
+  }
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display), Georgia, serif;
   }
 }

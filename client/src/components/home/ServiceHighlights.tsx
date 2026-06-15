@@ -38,7 +38,7 @@ export default function ServiceHighlights() {
         <div className="mt-12 text-center">
           <Link
             href="/services"
-            className="inline-flex items-center justify-center rounded-lg border border-brown-300 px-6 py-3 font-medium text-brown-600 transition-colors hover:bg-cream-50"
+            className="inline-flex items-center justify-center rounded-full bg-cream-200 px-8 py-3 text-sm font-bold uppercase tracking-wide text-brown-900 shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white hover:shadow-xl"
           >
             Ver tabela de preços completa →
           </Link>
