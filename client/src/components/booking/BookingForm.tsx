@@ -6,10 +6,10 @@ import StaffPicker from './StaffPicker'
 import DateTimePicker from './DateTimePicker'
 import BookingSummary from './BookingSummary'
 
-const STEPS = ['Serviço', 'Profissional', 'Data & Hora', 'Confirmação']
+const STEPS = ['Serviço', 'Profissional', 'Data & Hora', 'Pedido']
 
 export type Booking = {
-  service: string | null
+  services: string[]
   staff: string | null
   date: Date | null
   time: string | null
@@ -18,7 +18,7 @@ export type Booking = {
 export default function BookingForm({ initialCategory }: { initialCategory?: string }) {
   const [step, setStep] = useState(0)
   const [booking, setBooking] = useState<Booking>({
-    service: null,
+    services: [],
     staff: null,
     date: null,
     time: null,
@@ -26,31 +26,36 @@ export default function BookingForm({ initialCategory }: { initialCategory?: str
 
   return (
     <div className="mx-auto max-w-4xl">
-      <div className="mb-8 flex items-center gap-2">
+      <div className="mb-8 flex items-center justify-center gap-2 sm:justify-start">
         {STEPS.map((label, i) => (
           <div key={label} className="flex items-center gap-2">
             <div
-              className={`flex h-8 w-8 items-center justify-center rounded-full text-sm font-medium ${
+              className={`flex h-8 w-8 flex-none items-center justify-center rounded-full text-sm font-medium ${
                 i <= step ? 'bg-brown-600 text-white' : 'bg-cream-100 text-brown-400'
               }`}
             >
               {i + 1}
             </div>
             <span
-              className={`text-sm ${i === step ? 'font-medium text-brown-800' : 'text-brown-300'}`}
+              className={`hidden text-sm sm:inline ${i === step ? 'font-medium text-brown-800' : 'text-brown-300'}`}
             >
               {label}
             </span>
-            {i < STEPS.length - 1 && <div className="h-px w-8 bg-cream-200" />}
+            {i < STEPS.length - 1 && <div className="h-px w-6 bg-cream-200 sm:w-8" />}
           </div>
         ))}
       </div>
 
+      {/* Etiqueta do passo atual — apenas mobile */}
+      <p className="-mt-4 mb-6 text-center text-sm font-semibold uppercase tracking-wider text-brown-500 sm:hidden">
+        {step + 1}. {STEPS[step]}
+      </p>
+
       {step === 0 && (
         <ServicePicker
           category={initialCategory}
-          onNext={(service) => {
-            setBooking((b) => ({ ...b, service }))
+          onNext={(services) => {
+            setBooking((b) => ({ ...b, services }))
             setStep(1)
           }}
         />

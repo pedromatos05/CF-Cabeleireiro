@@ -12,8 +12,10 @@ export default async function BookingPage({
     : undefined
 
   return (
-    <div className="container mx-auto px-4 py-16 sm:px-6 lg:px-8">
-      <h1 className="mx-auto mb-8 max-w-4xl text-4xl font-bold text-brown-800">Marcar Marcação</h1>
+    <div className="container mx-auto px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+      <h1 className="mx-auto mb-8 max-w-4xl text-3xl font-bold text-brown-800 sm:text-4xl">
+        Marcar Marcação
+      </h1>
       <BookingForm initialCategory={initialCategory} />
     </div>
   )

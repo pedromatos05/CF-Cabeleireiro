@@ -7,7 +7,7 @@ import { withAmp } from '@/lib/text'
 
 interface ServicePickerProps {
   category?: string
-  onNext: (service: string) => void
+  onNext: (services: string[]) => void
 }
 
 export default function ServicePicker({ category, onNext }: ServicePickerProps) {
@@ -16,7 +16,12 @@ export default function ServicePicker({ category, onNext }: ServicePickerProps) 
     : undefined
 
   const [activeCategory, setActiveCategory] = useState<string | undefined>(initialName)
-  const [selected, setSelected] = useState<string | null>(null)
+  const [selected, setSelected] = useState<string[]>([])
+
+  const toggle = (item: string) =>
+    setSelected((prev) =>
+      prev.includes(item) ? prev.filter((s) => s !== item) : [...prev, item]
+    )
 
   const visibleCategories = activeCategory
     ? serviceMenu.filter((c) => c.name === activeCategory)
@@ -24,7 +29,8 @@ export default function ServicePicker({ category, onNext }: ServicePickerProps) 
 
   return (
     <div className="pb-28">
-      <h2 className="mb-4 text-xl font-semibold text-brown-800">Escolha o serviço</h2>
+      <h2 className="mb-1 text-xl font-semibold text-brown-800">Escolha os serviços</h2>
+      <p className="mb-4 text-sm text-brown-400">Pode escolher mais do que um serviço.</p>
 
       {activeCategory && (
         <p className="mb-6 text-sm text-brown-400">
@@ -48,12 +54,12 @@ export default function ServicePicker({ category, onNext }: ServicePickerProps) 
             </h3>
             <div className="grid gap-2 sm:grid-cols-2">
               {cat.items.map((item) => {
-                const isSelected = selected === item
+                const isSelected = selected.includes(item)
                 return (
                   <button
                     key={item}
                     type="button"
-                    onClick={() => setSelected(item)}
+                    onClick={() => toggle(item)}
                     aria-pressed={isSelected}
                     className={`flex items-center justify-between gap-3 rounded-lg border p-4 text-left transition-colors ${
                       isSelected
@@ -96,17 +102,19 @@ export default function ServicePicker({ category, onNext }: ServicePickerProps) 
         ))}
       </div>
 
-      {/* Barra fixa em baixo com o serviço selecionado */}
-      {selected && (
+      {/* Barra fixa em baixo com os serviços selecionados */}
+      {selected.length > 0 && (
         <div className="fixed inset-x-0 bottom-0 z-40 border-t border-cream-200 bg-white/95 shadow-[0_-4px_20px_rgba(38,21,8,0.06)] backdrop-blur-sm">
           <div className="mx-auto flex max-w-2xl items-center justify-between gap-4 px-4 py-4">
             <div className="min-w-0">
               <p className="text-xs uppercase tracking-[0.2em] text-brown-300">
-                Serviço selecionado
+                {selected.length === 1
+                  ? '1 serviço selecionado'
+                  : `${selected.length} serviços selecionados`}
               </p>
-              <p className="truncate font-semibold text-brown-800">{selected}</p>
+              <p className="truncate font-semibold text-brown-800">{selected.join(', ')}</p>
             </div>
-            <Button onClick={() => selected && onNext(selected)}>Continuar</Button>
+            <Button onClick={() => selected.length > 0 && onNext(selected)}>Continuar</Button>
           </div>
         </div>
       )}

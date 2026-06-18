@@ -68,7 +68,14 @@ export default function DateTimePicker({ onBack, onNext }: DateTimePickerProps) 
 
   const changeMonth = (delta: number) => setViewMonth(new Date(year, month + delta, 1))
 
-  const slots = selectedDate ? generateSlots(selectedDate.getDay()) : []
+  // Horas que já passaram não podem ser marcadas (apenas relevante para hoje)
+  const now = new Date()
+  const nowMinutes = now.getHours() * 60 + now.getMinutes()
+  const selectedIsToday = !!selectedDate && selectedDate.getTime() === today.getTime()
+
+  let slots = selectedDate ? generateSlots(selectedDate.getDay()) : []
+  if (selectedIsToday) slots = slots.filter((s) => toMinutes(s) > nowMinutes)
+
   const periods = [
     { label: 'Manhã', slots: slots.filter((s) => Number(s.slice(0, 2)) < 13) },
     { label: 'Tarde', slots: slots.filter((s) => Number(s.slice(0, 2)) >= 13) },

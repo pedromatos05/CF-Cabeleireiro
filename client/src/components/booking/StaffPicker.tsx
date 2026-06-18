@@ -11,10 +11,10 @@ interface StaffPickerProps {
 
 // ⬇️ EDITA AQUI: profissionais disponíveis para marcação
 const staff = [
-  { name: 'Francisca', role: 'Cabeleireira' },
   { name: 'Carla', role: 'Cabeleireira' },
-  { name: 'Funcionária 1', role: 'Cabeleireira' },
-  { name: 'Funcionária 2', role: 'Cabeleireira' },
+  { name: 'Francisca', role: 'Cabeleireira' },
+  { name: 'Sofıa', role: 'Cabeleireira' },
+  { name: 'Sandrinha', role: 'Esteticista' },
 ]
 
 function initials(name: string) {

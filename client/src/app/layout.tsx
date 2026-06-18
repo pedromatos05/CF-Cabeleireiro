@@ -3,7 +3,7 @@ import { Plus_Jakarta_Sans, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
-import FloatingBookingButton from '@/components/layout/FloatingBookingButton'
+import CookieBanner from '@/components/layout/CookieBanner'
 
 const sans = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -18,8 +18,28 @@ const display = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'CF Cabeleireiro',
-  description: 'Salão de cabeleireiro em Braga — marque o seu serviço online.',
+  title: {
+    default: 'CF Cabeleireiro · Cabeleireiro e Estética em Braga',
+    template: '%s · CF Cabeleireiro',
+  },
+  description:
+    'CF Cabeleireiro — salão de cabeleireiro e estética em Braga. Corte, cor, tratamentos, massagens, manicure, epilação e maquilhagem. Faça o seu pedido de marcação online.',
+  keywords: [
+    'cabeleireiro Braga',
+    'estética Braga',
+    'salão de beleza Braga',
+    'marcação online',
+    'CF Cabeleireiro',
+  ],
+  applicationName: 'CF Cabeleireiro',
+  openGraph: {
+    title: 'CF Cabeleireiro · Cabeleireiro e Estética em Braga',
+    description:
+      'Salão de cabeleireiro e estética em Braga. Faça o seu pedido de marcação online.',
+    locale: 'pt_PT',
+    type: 'website',
+  },
+  robots: { index: true, follow: true },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -33,7 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main className="pt-16">{children}</main>
         <Footer />
-        <FloatingBookingButton />
+        <CookieBanner />
       </body>
     </html>
   )

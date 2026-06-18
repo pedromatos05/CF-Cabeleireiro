@@ -1,11 +1,11 @@
 import Image from 'next/image'
 
 // ⬇️ EDITA AQUI: caminho da foto das fundadoras em /client/public/
-const donasPhoto = '/FotoDonas.jpg'
+const donasPhoto = '/Fundadoras.jpeg'
 
 // ⬇️ EDITA AQUI: nomes e funções das fundadoras
 const founders = [
-  { name: 'Francisca', role: 'Cabeleireira & Fundadora' },
+  { name: 'Kika', role: 'Cabeleireira & Fundadora' },
   { name: 'Carla', role: 'Cabeleireira & Fundadora' },
 ]
 
@@ -45,7 +45,7 @@ export default function Team() {
           <div>
             
             <p className="mt-5 leading-relaxed text-brown-500">
-              O CF Cabeleireiro nasce da visão partilhada pela Francisca e pela Carla: criar um espaço de referência 
+              O CF Cabeleireiro nasce da visão partilhada pela Kika e pela Carla: criar um espaço de referência
               onde o cuidado capilar se alia à técnica de excelência. Com uma aposta forte na formação contínua e no 
               uso de produtos de alta cosmética, dedicam-se a proporcionar diagnósticos precisos e resultados de máxima qualidade.
             </p>

@@ -114,6 +114,14 @@ export const XIcon = (p: IconProps) => (
   </Svg>
 )
 
+export const MenuIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="M4 6h16" />
+    <path d="M4 12h16" />
+    <path d="M4 18h16" />
+  </Svg>
+)
+
 export const CalendarIcon = (p: IconProps) => (
   <Svg {...p}>
     <path d="M8 2v4" />
