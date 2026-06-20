@@ -21,44 +21,46 @@ export default function PrivacidadePage() {
         </p>
       </LegalSection>
 
-      <LegalSection n={2} title="Dados que recolhemos">
-        <p>Tratamos apenas os dados necessários para lhe prestar os nossos serviços:</p>
-        <ul className="list-disc space-y-1 pl-5">
-          <li>Nome;</li>
-          <li>Endereço de email;</li>
-          <li>Número de telemóvel;</li>
-          <li>Pedidos e histórico de marcações (serviços, profissional, data e hora).</li>
-        </ul>
+      <LegalSection n={2} title="Dados que tratamos">
+        <p>
+          Este site é meramente informativo: não dispõe de formulários, registo de conta nem
+          marcação online, pelo que não recolhe dados pessoais que nos forneça diretamente através
+          do site. Apenas tratamos dados pessoais quando nos contacta voluntariamente — por
+          telefone, email ou redes sociais — e, nesse caso, apenas os dados que nos transmitir (por
+          exemplo, nome e contacto) para lhe responder.
+        </p>
       </LegalSection>
 
       <LegalSection n={3} title="Finalidades e fundamento legal">
-        <p>Utilizamos os seus dados para:</p>
+        <p>Quando nos contacta, utilizamos os seus dados apenas para:</p>
         <ul className="list-disc space-y-1 pl-5">
-          <li>Gerir a sua conta de cliente e autenticação (execução do contrato);</li>
           <li>
-            Processar e gerir os seus pedidos de marcação e contactá-lo sobre os mesmos (execução
-            do contrato);
+            Responder ao seu contacto e prestar a informação ou marcação solicitada (diligências
+            pré-contratuais e interesse legítimo);
           </li>
-          <li>Cumprir obrigações legais e fiscais aplicáveis (obrigação legal);</li>
-          <li>Responder a contactos e pedidos de informação (interesse legítimo).</li>
+          <li>
+            Cumprir obrigações legais e fiscais aplicáveis, quando haja prestação de serviços
+            (obrigação legal).
+          </li>
         </ul>
       </LegalSection>
 
       <LegalSection n={4} title="Conservação dos dados">
         <p>
-          Conservamos os seus dados apenas durante o período necessário às finalidades acima
-          descritas e pelos prazos legais aplicáveis. Quando deixarem de ser necessários, os dados
-          são eliminados ou anonimizados. Pode também solicitar a eliminação da sua conta a
-          qualquer momento na sua área de cliente.
+          Conservamos os dados que nos transmitir apenas durante o tempo necessário para responder
+          ao seu contacto e pelos prazos legais aplicáveis. Quando deixam de ser necessários, os
+          dados são eliminados. Pode solicitar a eliminação dos seus dados a qualquer momento
+          através do email <strong>{business.email}</strong>.
         </p>
       </LegalSection>
 
-      <LegalSection n={5} title="Partilha com terceiros">
+      <LegalSection n={5} title="Terceiros e mapa">
         <p>
-          Não vendemos os seus dados pessoais. Os dados podem ser tratados por prestadores de
-          serviços que nos apoiam (por exemplo, fornecedores de alojamento e de base de dados), que
-          atuam como subcontratantes, apenas seguindo as nossas instruções e com garantias adequadas
-          de segurança. Podemos ainda comunicar dados a autoridades quando legalmente exigido.
+          Não vendemos os seus dados pessoais. Este site incorpora um mapa do Google Maps para
+          indicar a nossa localização; ao carregar esse mapa, o Google pode recolher dados (como o
+          seu endereço IP) nos termos da política de privacidade do Google. O alojamento do site
+          pode ser assegurado por prestadores que atuam como subcontratantes, seguindo as nossas
+          instruções. Podemos ainda comunicar dados a autoridades quando legalmente exigido.
         </p>
       </LegalSection>
 
@@ -85,9 +87,10 @@ export default function PrivacidadePage() {
 
       <LegalSection n={7} title="Cookies">
         <p>
-          Este site utiliza cookies estritamente necessários ao seu funcionamento e à sua sessão de
-          cliente. Não utilizamos cookies de publicidade ou de seguimento sem o seu consentimento.
-          Pode gerir os cookies nas definições do seu navegador.
+          Este site utiliza apenas cookies estritamente necessários ao seu funcionamento. O mapa do
+          Google Maps incorporado pode, contudo, definir cookies próprios do Google. Não utilizamos
+          cookies de publicidade ou de seguimento. Pode gerir os cookies nas definições do seu
+          navegador.
         </p>
       </LegalSection>
 

@@ -1,15 +1,7 @@
-'use client'
-
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
 import { livroReclamacoes } from '@/data/legal'
 
 export default function Footer() {
-  const pathname = usePathname()
-
-  // A área de conta ocupa o ecrã todo — sem rodapé
-  if (pathname?.startsWith('/account')) return null
-
   return (
     <footer className="bg-brown-900">
       <div className="container mx-auto px-4 py-5 sm:px-6 lg:px-8">

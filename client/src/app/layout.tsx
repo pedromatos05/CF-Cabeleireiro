@@ -23,19 +23,18 @@ export const metadata: Metadata = {
     template: '%s · CF Cabeleireiro',
   },
   description:
-    'CF Cabeleireiro — salão de cabeleireiro e estética em Braga. Corte, cor, tratamentos, massagens, manicure, epilação e maquilhagem. Faça o seu pedido de marcação online.',
+    'CF Cabeleireiro — salão de cabeleireiro e estética em Braga. Corte, cor, tratamentos, massagens, manicure, epilação e maquilhagem. Ligue para marcar a sua visita.',
   keywords: [
     'cabeleireiro Braga',
     'estética Braga',
     'salão de beleza Braga',
-    'marcação online',
     'CF Cabeleireiro',
   ],
   applicationName: 'CF Cabeleireiro',
   openGraph: {
     title: 'CF Cabeleireiro · Cabeleireiro e Estética em Braga',
     description:
-      'Salão de cabeleireiro e estética em Braga. Faça o seu pedido de marcação online.',
+      'Salão de cabeleireiro e estética em Braga. Ligue para marcar a sua visita.',
     locale: 'pt_PT',
     type: 'website',
   },

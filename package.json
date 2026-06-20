@@ -3,26 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "client",
-    "admin",
-    "backend"
+    "client"
   ],
   "scripts": {
-    "dev:client": "npm run dev --workspace=client",
-    "dev:admin": "npm run dev --workspace=admin",
-    "dev:backend": "npm run dev --workspace=backend",
-    "dev": "concurrently \"npm run dev:client\" \"npm run dev:admin\" \"npm run dev:backend\""
-  },
-  "devDependencies": {
-    "concurrently": "^8.2.2"
+    "dev": "npm run dev --workspace=client",
+    "build": "npm run build --workspace=client",
+    "start": "npm run start --workspace=client"
   },
   "overrides": {
     "minimatch": "^9.0.7",
     "glob": "^10.4.6",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
-  },
-  "dependencies": {
-    "@react-email/components": "^1.0.12"
   }
 }

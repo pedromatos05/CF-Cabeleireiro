@@ -6,7 +6,7 @@ import { business, livroReclamacoes, ral } from '@/data/legal'
 export const metadata: Metadata = {
   title: 'Termos e Condições',
   description:
-    'Termos e condições de utilização do site e do serviço de marcações do CF Cabeleireiro.',
+    'Termos e condições de utilização do site informativo do CF Cabeleireiro.',
 }
 
 export default function TermosPage() {
@@ -22,29 +22,22 @@ export default function TermosPage() {
 
       <LegalSection n={2} title="Objeto">
         <p>
-          Estes termos regulam a utilização do site e do serviço de pedidos de marcação online do
-          CF Cabeleireiro. Ao utilizar o site, declara aceitar os presentes termos.
+          Estes termos regulam a utilização do site informativo do CF Cabeleireiro, que se destina a
+          apresentar o salão, os seus serviços e contactos. Ao utilizar o site, declara aceitar os
+          presentes termos.
         </p>
       </LegalSection>
 
-      <LegalSection n={3} title="Pedidos de marcação">
+      <LegalSection n={3} title="Marcações">
         <p>
-          As marcações efetuadas através do site constituem um{' '}
-          <strong>pedido de marcação</strong> e não uma reserva confirmada. Cada pedido fica
-          sujeito a aceitação ou recusa por parte da profissional a quem o serviço foi pedido.
-          Receberá a resposta por email ou na sua área de cliente. Os preços e a duração dos
-          serviços podem variar consoante a avaliação no salão.
+          As marcações são efetuadas exclusivamente por telefone ou através dos restantes contactos
+          do salão, não existindo marcação online neste site. As informações sobre serviços, preços
+          e duração apresentadas no site são meramente indicativas e podem variar consoante a
+          avaliação no salão.
         </p>
       </LegalSection>
 
-      <LegalSection n={4} title="Conta de cliente">
-        <p>
-          É responsável por manter a confidencialidade dos seus dados de acesso e pela veracidade
-          das informações fornecidas. Pode solicitar a eliminação da sua conta a qualquer momento.
-        </p>
-      </LegalSection>
-
-      <LegalSection n={5} title="Proteção de dados">
+      <LegalSection n={4} title="Proteção de dados">
         <p>
           O tratamento dos seus dados pessoais rege-se pela nossa{' '}
           <Link
@@ -57,7 +50,7 @@ export default function TermosPage() {
         </p>
       </LegalSection>
 
-      <LegalSection n={6} title="Livro de Reclamações">
+      <LegalSection n={5} title="Livro de Reclamações">
         <p>
           Nos termos da lei, este estabelecimento dispõe de Livro de Reclamações eletrónico,
           disponível em{' '}
@@ -73,7 +66,7 @@ export default function TermosPage() {
         </p>
       </LegalSection>
 
-      <LegalSection n={7} title="Resolução de litígios">
+      <LegalSection n={6} title="Resolução de litígios">
         <p>
           Em caso de litígio de consumo, o consumidor pode recorrer à entidade de resolução
           alternativa de litígios competente:
@@ -105,7 +98,7 @@ export default function TermosPage() {
         </p>
       </LegalSection>
 
-      <LegalSection n={8} title="Lei aplicável">
+      <LegalSection n={7} title="Lei aplicável">
         <p>
           Os presentes termos regem-se pela lei portuguesa. Para a resolução de qualquer litígio são
           competentes os tribunais portugueses, sem prejuízo do recurso à resolução alternativa de
