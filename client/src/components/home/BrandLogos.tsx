@@ -4,15 +4,21 @@ import { brands } from '@/data/brands'
 
 export default function BrandLogos() {
   return (
-    <section className="bg-gradient-to-b from-cream-50 to-white py-10">
+    <section id="marcas" className="scroll-mt-20 bg-gradient-to-b from-cream-50 to-white py-10">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold text-brown-800 sm:text-4xl">
             As marcas que utilizamos
           </h2>
           <div className="mx-auto mt-4 h-px w-16 bg-brown-300" />
-          <p className="mx-auto mt-4 max-w-xl text-brown-400">
-            Trabalhamos apenas com produtos profissionais de alta qualidade.
+          <p className="mx-auto mt-4 max-w-2xl text-brown-400">
+            Selecionamos exclusivamente produtos de origem orgânica da Wella Professionals, livres de
+            aditivos e corantes, assegurando um cuidado capilar de excelência e resultados à altura
+            das suas expectativas.
+          </p>
+          <p className="mt-2 text-sm font-medium text-brown-300">
+            Clique num dos ícones das nossas marcas para ver melhor a nossa gama de produtos de
+            excelência.
           </p>
         </div>
 

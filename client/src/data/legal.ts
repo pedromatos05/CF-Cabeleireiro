@@ -19,7 +19,7 @@ export const business = {
   // Contactos
   phone: '+351 962 902 306',
   phoneHref: 'tel:+351962902306',
-  email: '[PREENCHER — email de contacto]',
+  email: 'cfcabeleireiroo@gmail.com',
   instagram: '@cf.cabeleireiroo',
   instagramUrl: 'https://www.instagram.com/cf.cabeleireiroo',
 

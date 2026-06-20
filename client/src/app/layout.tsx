@@ -19,7 +19,7 @@ const display = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: 'CF Cabeleireiro · Cabeleireiro e Estética em Braga',
+    default: 'CF Cabeleireiro',
     template: '%s · CF Cabeleireiro',
   },
   description:

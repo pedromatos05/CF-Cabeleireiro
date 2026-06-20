@@ -10,9 +10,9 @@ export default function HomePage() {
     <>
       <Hero />
       <SalonAbout />
+      <BrandLogos />
       <ServicesMenu />
       <Team />
-      <BrandLogos />
       <ContactMap />
     </>
   )

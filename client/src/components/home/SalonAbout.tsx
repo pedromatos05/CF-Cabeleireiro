@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function SalonAbout() {
   return (
-    <section id="sobre" className="scroll-mt-20 bg-white py-20">
+    <section id="sobre" className="scroll-mt-20 bg-gradient-to-b from-white to-cream-50 py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-14 text-center">
           <p className="mb-2 text-xs font-semibold uppercase tracking-[0.3em] text-brown-300">

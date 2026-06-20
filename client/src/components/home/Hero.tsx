@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Hero() {
   return (
@@ -26,6 +27,14 @@ export default function Hero() {
           Venha relaxar e sinta-se em casa.
         </p>
       </div>
+
+      {/* Botão para a página de tendências — fixo em baixo, ao centro */}
+      <Link
+        href="/tendencias"
+        className="absolute bottom-16 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-full bg-brown-700 px-7 py-3 text-sm font-semibold text-white shadow-lg ring-1 ring-black/10 transition-colors hover:bg-brown-800"
+      >
+        Tendências da Estação
+      </Link>
     </section>
   )
 }
