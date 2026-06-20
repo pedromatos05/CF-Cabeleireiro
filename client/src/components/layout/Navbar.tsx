@@ -4,6 +4,7 @@ const links = [
   { href: '/#sobre', label: 'Espaço' },
   { href: '/#marcas', label: 'Produtos' },
   { href: '/#servicos', label: 'Serviços' },
+  { href: '/trabalhos', label: 'Trabalhos' },
   { href: '/#contacto', label: 'Contactos' },
 ]
 
