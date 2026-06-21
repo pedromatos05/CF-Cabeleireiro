@@ -101,6 +101,12 @@ export const ChevronLeftIcon = (p: IconProps) => (
   </Svg>
 )
 
+export const ChevronRightIcon = (p: IconProps) => (
+  <Svg {...p}>
+    <path d="m9 18 6-6-6-6" />
+  </Svg>
+)
+
 export const CheckIcon = (p: IconProps) => (
   <Svg {...p}>
     <path d="M20 6 9 17l-5-5" />

@@ -38,7 +38,7 @@ export const seasons: Season[] = [
     name: 'Verão',
     period: 'Junho – Setembro',
     intro:
-      'Looks práticos e cheios de vida, pensados para o calor — texturas soltas, reflexos solares e fácil manutenção.',
+      'Com o calor, o cabelo pede leveza. No verão apostamos em cortes soltos e cores iluminadas pelo sol, fáceis de cuidar mesmo nos dias de praia.',
     looks: [],
   },
   {

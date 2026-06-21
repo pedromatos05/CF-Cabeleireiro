@@ -29,12 +29,14 @@ export default function Hero() {
       </div>
 
       {/* Botão para a página de tendências — fixo em baixo, ao centro */}
-      <Link
-        href="/tendencias"
-        className="absolute bottom-16 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-full bg-brown-700 px-7 py-3 text-sm font-semibold text-white shadow-lg ring-1 ring-black/10 transition-colors hover:bg-brown-800"
-      >
-        Tendências da Estação
-      </Link>
+      <div className="absolute bottom-16 left-1/2 z-20 -translate-x-1/2">
+        <Link
+          href="/tendencias"
+          className="animate-aura block whitespace-nowrap rounded-full bg-brown-700 px-6 py-3 text-sm font-semibold text-white ring-1 ring-black/10 transition-colors hover:bg-brown-800"
+        >
+          Tendências da Estação
+        </Link>
+      </div>
     </section>
   )
 }

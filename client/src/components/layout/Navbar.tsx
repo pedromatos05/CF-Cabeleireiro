@@ -1,11 +1,12 @@
 import Link from 'next/link'
+import MobileMenu from '@/components/layout/MobileMenu'
 
 const links = [
   { href: '/#sobre', label: 'Espaço' },
   { href: '/#marcas', label: 'Produtos' },
   { href: '/#servicos', label: 'Serviços' },
-  { href: '/trabalhos', label: 'Trabalhos' },
   { href: '/#contacto', label: 'Contactos' },
+  { href: '/noivas', label: 'Noivas' },
 ]
 
 export default function Navbar() {
@@ -27,6 +28,9 @@ export default function Navbar() {
             </Link>
           ))}
         </nav>
+
+        {/* Menu das três barras (apenas telemóvel) */}
+        <MobileMenu links={links} />
       </div>
     </header>
   )

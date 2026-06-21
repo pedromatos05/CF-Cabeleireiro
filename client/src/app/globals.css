@@ -18,3 +18,26 @@
     font-family: var(--font-display), Georgia, serif;
   }
 }
+
+@layer utilities {
+  /* Botão "Tendências da Estação": aura castanha que pulsa + ligeiro respirar */
+  @keyframes aura-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 16px 3px rgba(124, 92, 67, 0.45), 0 10px 20px -6px rgba(0, 0, 0, 0.35);
+      transform: scale(1);
+    }
+    50% {
+      box-shadow: 0 0 34px 12px rgba(124, 92, 67, 0.7), 0 10px 20px -6px rgba(0, 0, 0, 0.35);
+      transform: scale(1.05);
+    }
+  }
+  .animate-aura {
+    animation: aura-pulse 2.4s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-aura {
+      animation: none;
+    }
+  }
+}
