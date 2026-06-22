@@ -9,9 +9,6 @@ type NavLink = { href: string; label: string }
 
 export default function MobileMenu({ links }: { links: NavLink[] }) {
   const [open, setOpen] = useState(false)
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => setMounted(true), [])
 
   // Bloqueia o scroll do fundo enquanto o menu está aberto
   useEffect(() => {
@@ -37,7 +34,6 @@ export default function MobileMenu({ links }: { links: NavLink[] }) {
 
       {/* Renderizado fora do header (portal) para o desfoque funcionar */}
       {open &&
-        mounted &&
         createPortal(
           <div className="fixed inset-x-0 bottom-0 top-16 z-40">
             {/* Fundo escurecido por baixo do painel (clicar fecha) */}

@@ -16,7 +16,7 @@ export default function BrandLogos() {
             aditivos e corantes, assegurando um cuidado capilar de excelência e resultados à altura
             das suas expectativas.
           </p>
-          <p className="mt-2 text-sm font-medium text-brown-300">
+          <p className="mt-5 inline-block max-w-md rounded-2xl bg-brown-100 px-4 py-2 text-sm font-medium text-brown-700 sm:max-w-none sm:rounded-full sm:px-5">
             Clique num dos ícones das nossas marcas para ver melhor a nossa gama de produtos de
             excelência.
           </p>
