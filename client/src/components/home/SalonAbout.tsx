@@ -37,7 +37,7 @@ export default function SalonAbout() {
           <div className="relative min-h-[340px] w-full overflow-hidden rounded-2xl border border-cream-200 shadow-sm md:col-span-2">
             {/* ⬇️ EDITA AQUI: foto do espaço do salão */}
             <Image
-              src="/Espaco.jpg"
+              src="/espaco_CF.jpeg"
               alt="Espaço do salão CF Cabeleireiro"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"

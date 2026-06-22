@@ -10,6 +10,9 @@ export default function CookieBanner() {
 
   useEffect(() => {
     try {
+      // Leitura do localStorage só é possível no cliente e depois da hidratação,
+      // por isso o setState aqui é intencional (evita mismatch de SSR).
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       if (!localStorage.getItem(STORAGE_KEY)) setVisible(true)
     } catch {
       // localStorage indisponível — não mostra o banner

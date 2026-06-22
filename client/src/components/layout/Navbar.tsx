@@ -11,7 +11,11 @@ const links = [
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 z-50 w-full border-b border-cream-200/40 bg-white/80 backdrop-blur-sm">
+    <header className="fixed top-0 z-50 w-full border-b border-cream-200/40">
+      {/* Fundo desfocado numa camada à parte (não envolve os botões) para
+          evitar o bug do iOS Safari em que backdrop-filter + position:fixed
+          impede o registo de toques nos elementos-filho. */}
+      <div className="absolute inset-0 -z-10 bg-white/80 backdrop-blur-sm" />
       <div className="container relative mx-auto flex h-16 items-center px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
