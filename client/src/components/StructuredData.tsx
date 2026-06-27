@@ -10,7 +10,7 @@ export default function StructuredData() {
     name: business.name,
     description: business.description,
     url: siteUrl,
-    image: `${siteUrl}/opengraph-image`,
+    image: `${siteUrl}/opengraph-image.jpg`,
     telephone: business.phone,
     priceRange: '€€',
     address: {

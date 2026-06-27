@@ -17,26 +17,29 @@ export default function TendenciasPage() {
   if (!season) notFound()
 
   return (
-    <div className="bg-cream-50">
-      {/* Cabeçalho */}
-      <header className="border-b border-cream-200 bg-gradient-to-b from-white to-cream-50">
-        <div className="container mx-auto max-w-4xl px-4 py-16 text-center sm:px-6 lg:px-8">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.3em] text-brown-300">
+    /* Ocupa exatamente o ecrã, sem scroll vertical */
+    <div className="flex h-screen flex-col overflow-hidden pt-16">
+      {/* Cabeçalho compacto */}
+      <header className="shrink-0 border-b border-cream-200 bg-gradient-to-b from-white to-cream-50">
+        <div className="container mx-auto max-w-3xl px-4 py-4 text-center sm:py-5 sm:px-6">
+          <p className="mb-1 text-xs font-semibold uppercase tracking-[0.3em] text-brown-300">
             Inspiração de estação
           </p>
-          <h1 className="font-display text-4xl font-bold text-brown-800 sm:text-5xl">
+          <h1 className="font-display text-2xl font-bold text-brown-800 sm:text-3xl">
             Tendências de <span className="text-brown-500">{season.name}</span>
           </h1>
-          <p className="mt-3 text-xs font-semibold uppercase tracking-[0.25em] text-brown-300">
+          <p className="mt-1 text-xs font-semibold uppercase tracking-[0.25em] text-brown-300">
             {season.period}
           </p>
-          <div className="mx-auto mt-5 h-px w-16 bg-brown-300" />
-          <p className="mx-auto mt-6 max-w-2xl leading-relaxed text-brown-500">{season.intro}</p>
+          <div className="mx-auto mt-3 h-px w-10 bg-brown-300" />
+          <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-brown-500">
+            {season.intro}
+          </p>
         </div>
       </header>
 
-      {/* Carrossel — uma linha */}
-      <div className="container mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      {/* Carrossel preenche o espaço restante */}
+      <div className="flex min-h-0 flex-1 items-center overflow-hidden px-4 py-4 sm:px-6 sm:py-6">
         <TrendCarousel looks={season.looks} seasonName={season.name} />
       </div>
     </div>

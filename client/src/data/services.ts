@@ -11,7 +11,7 @@ export const serviceMenu: MenuCategory[] = [
   },
   {
     name: 'Corte',
-    items: ['Corte Feminino', 'Corte Masculino', 'Corte Infantil', 'Suplemento de Corte'],
+    items: ['Corte Feminino', 'Corte Masculino', 'Corte Infantil'],
   },
   {
     name: 'Cor',

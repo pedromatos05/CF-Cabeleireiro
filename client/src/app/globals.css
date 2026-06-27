@@ -40,4 +40,55 @@
       animation: none;
     }
   }
+
+  /* Revelar conteúdo ao entrar no ecrã (também funciona em mobile via scroll
+     por toque). O estado inicial esconde; a classe .is-visible anima a entrada. */
+  @keyframes reveal-up {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: none; }
+  }
+  @keyframes reveal-left {
+    from { opacity: 0; transform: translateX(-32px); }
+    to   { opacity: 1; transform: none; }
+  }
+  .reveal {
+    opacity: 0;
+  }
+  .reveal.is-visible {
+    animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .reveal-left.is-visible {
+    animation: reveal-left 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal, .reveal-left,
+    .reveal.is-visible, .reveal-left.is-visible {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  }
+
+  /* Entrada suave no carregamento (ex.: texto da hero). Os atrasos criam um
+     pequeno efeito em cascata. */
+  .animate-rise {
+    opacity: 0;
+    animation: reveal-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .rise-delay-1 {
+    animation-delay: 0.1s;
+  }
+  .rise-delay-2 {
+    animation-delay: 0.25s;
+  }
+  .rise-delay-3 {
+    animation-delay: 0.4s;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-rise {
+      opacity: 1;
+      transform: none;
+      animation: none;
+    }
+  }
 }

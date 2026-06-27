@@ -31,18 +31,20 @@ export default function CookieBanner() {
   if (!visible) return null
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[60] px-4 pb-4">
-      <div className="mx-auto flex max-w-3xl flex-col gap-4 rounded-2xl border border-cream-200 bg-white/95 p-5 shadow-xl shadow-brown-900/10 backdrop-blur-sm sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm leading-relaxed text-brown-600">
-          Utilizamos cookies essenciais ao funcionamento do site. Ao continuar, aceita a nossa{' '}
-          <Link href="/privacidade" className="font-medium text-brown-700 underline hover:text-brown-900">
-            Política de Privacidade
+    <div className="fixed inset-x-0 bottom-0 z-[60] px-3 pb-3 sm:px-4 sm:pb-4">
+      <div className="mx-auto flex max-w-xl flex-col items-center gap-3 rounded-xl border border-cream-200 bg-white/95 px-4 py-3 text-center shadow-lg shadow-brown-900/10 backdrop-blur-sm sm:flex-row sm:gap-4 sm:text-left">
+        <p className="text-xs leading-snug text-brown-600 sm:text-sm">
+          Usamos apenas cookies essenciais ao funcionamento do site.{' '}
+          <Link
+            href="/privacidade"
+            className="whitespace-nowrap font-medium text-brown-700 underline underline-offset-2 hover:text-brown-900"
+          >
+            Saber mais
           </Link>
-          .
         </p>
         <button
           onClick={accept}
-          className="flex-none rounded-full bg-brown-700 px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-brown-800"
+          className="flex-none rounded-full bg-brown-700 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-brown-800"
         >
           Aceitar
         </button>

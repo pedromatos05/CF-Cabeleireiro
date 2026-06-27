@@ -4,9 +4,7 @@ import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import type { TrendLook } from '@/data/trends'
 
-// Nº de espaços a mostrar enquanto a estação ainda não tem fotos.
 const PLACEHOLDERS = 4
-// Velocidade do movimento automático (px por frame; ~60fps). Mais alto = mais rápido.
 const SPEED = 0.7
 
 export default function TrendCarousel({
@@ -24,14 +22,11 @@ export default function TrendCarousel({
   const base: (TrendLook | null)[] = hasLooks
     ? looks
     : Array.from({ length: PLACEHOLDERS }, () => null)
-  // Duplicamos a lista para o movimento ser contínuo (loop sem saltos).
   const items = [...base, ...base]
 
-  // Movimento automático contínuo
   useEffect(() => {
     const el = trackRef.current
     if (!el) return
-
     let raf = 0
     const tick = () => {
       if (!pausedRef.current) {
@@ -45,37 +40,35 @@ export default function TrendCarousel({
     return () => cancelAnimationFrame(raf)
   }, [])
 
-  // Pausa o automático momentaneamente enquanto o utilizador desliza (touch)
   const pauseFor = (ms: number) => {
     pausedRef.current = true
     if (resumeTimer.current) clearTimeout(resumeTimer.current)
-    resumeTimer.current = setTimeout(() => {
-      pausedRef.current = false
-    }, ms)
+    resumeTimer.current = setTimeout(() => { pausedRef.current = false }, ms)
   }
 
   return (
+    /* h-full: preenche o espaço que o pai lhe der */
     <div
       ref={trackRef}
-      onTouchStart={() => {
-        pausedRef.current = true
-      }}
+      onTouchStart={() => { pausedRef.current = true }}
       onTouchEnd={() => pauseFor(4000)}
-      className="flex gap-3 overflow-x-auto px-1 pb-4 sm:gap-5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+      className="flex h-full w-full gap-3 overflow-x-auto sm:gap-5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
     >
       {items.map((look, i) => (
         <article
           key={look ? `${look.name}-${i}` : i}
           aria-hidden={i >= base.length}
-          className="group w-[42vw] shrink-0 overflow-hidden rounded-2xl border border-cream-200 bg-white shadow-sm sm:w-[300px]"
+          /* h-full + flex-col para a imagem ocupar o espaço restante */
+          className="group flex h-full w-[42vw] shrink-0 flex-col overflow-hidden rounded-2xl border border-cream-200 bg-white shadow-sm sm:w-[260px]"
         >
-          <div className="relative aspect-[4/5] w-full bg-cream-100">
+          {/* Imagem — flex-1 + min-h-0 para crescer sem transbordar */}
+          <div className="relative min-h-0 flex-1 bg-cream-100">
             {look?.image ? (
               <Image
                 src={look.image}
                 alt={`${look.name} — tendência ${seasonName}`}
                 fill
-                sizes="(max-width: 640px) 80vw, 300px"
+                sizes="(max-width: 640px) 80vw, 260px"
                 quality={90}
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
@@ -87,11 +80,15 @@ export default function TrendCarousel({
               </div>
             )}
           </div>
+
+          {/* Legenda — altura fixa, não cresce */}
           {look && (
-            <div className="border-t border-cream-100 px-4 py-4 text-center">
-              <h3 className="font-display text-base text-brown-800 sm:text-lg">{look.name}</h3>
+            <div className="shrink-0 border-t border-cream-100 px-4 py-3 text-center">
+              <h3 className="font-display text-sm text-brown-800 sm:text-base">{look.name}</h3>
               {look.description && (
-                <p className="mt-1.5 text-sm leading-relaxed text-brown-500">{look.description}</p>
+                <p className="mt-1 text-xs leading-relaxed text-brown-500 sm:text-sm">
+                  {look.description}
+                </p>
               )}
             </div>
           )}

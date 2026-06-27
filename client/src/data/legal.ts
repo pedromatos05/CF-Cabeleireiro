@@ -8,7 +8,7 @@ export const business = {
   brandName: 'CF Cabeleireiro',
 
   // Número de Identificação Fiscal (obrigatório identificar o prestador)
-  nif: '[PREENCHER — NIF/NIPC]',
+  nif: '519060792',
 
   // Morada
   addressLine1: 'R. Victor de Sá, 59',

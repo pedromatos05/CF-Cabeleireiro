@@ -1,4 +1,5 @@
 import { MapPinIcon, PhoneIcon, InstagramIcon, ClockIcon } from '@/components/ui/icons'
+import Reveal from '@/components/ui/Reveal'
 
 // ⬇️ EDITA AQUI: dados de contacto do CF Cabeleireiro
 const contact = {
@@ -53,80 +54,59 @@ export default function ContactMap() {
           {/* Contactos — esquerda */}
           <div>
             <ul className="space-y-7">
-              <li className="flex items-start gap-4">
-                <IconBadge>
-                  <MapPinIcon />
-                </IconBadge>
-                <div>
-                  <Label>Morada</Label>
-                  <p className="mt-1 font-semibold uppercase tracking-wide text-brown-800">
-                    {contact.addressLine1}
-                  </p>
-                  <p className="text-sm uppercase tracking-wide text-brown-400">
-                    {contact.addressLine2}
-                  </p>
-                </div>
-              </li>
+              <Reveal delay={0}>
+                <li className="flex items-start gap-4">
+                  <IconBadge><MapPinIcon /></IconBadge>
+                  <div>
+                    <Label>Morada</Label>
+                    <p className="mt-1 font-semibold uppercase tracking-wide text-brown-800">{contact.addressLine1}</p>
+                    <p className="text-sm uppercase tracking-wide text-brown-400">{contact.addressLine2}</p>
+                  </div>
+                </li>
+              </Reveal>
 
-              <li className="flex items-start gap-4">
-                <IconBadge>
-                  <PhoneIcon />
-                </IconBadge>
-                <div>
-                  <Label>Telefone</Label>
-                  <a
-                    href={contact.phoneHref}
-                    className="mt-1 block font-semibold tracking-wide text-brown-800 transition-colors hover:text-brown-500"
-                  >
-                    {contact.phone}
-                  </a>
-                </div>
-              </li>
+              <Reveal delay={110}>
+                <li className="flex items-start gap-4">
+                  <IconBadge><PhoneIcon /></IconBadge>
+                  <div>
+                    <Label>Telefone</Label>
+                    <a href={contact.phoneHref} className="mt-1 block font-semibold tracking-wide text-brown-800 transition-colors hover:text-brown-500">
+                      {contact.phone}
+                    </a>
+                  </div>
+                </li>
+              </Reveal>
 
-              <li className="flex items-start gap-4">
-                <IconBadge>
-                  <InstagramIcon />
-                </IconBadge>
-                <div>
-                  <Label>Instagram</Label>
-                  <a
-                    href={contact.instagramUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-1 block font-semibold uppercase tracking-wide text-brown-800 transition-colors hover:text-brown-500"
-                  >
-                    {contact.instagram}
-                  </a>
-                </div>
-              </li>
+              <Reveal delay={220}>
+                <li className="flex items-start gap-4">
+                  <IconBadge><InstagramIcon /></IconBadge>
+                  <div>
+                    <Label>Instagram</Label>
+                    <a href={contact.instagramUrl} target="_blank" rel="noopener noreferrer" className="mt-1 block font-semibold uppercase tracking-wide text-brown-800 transition-colors hover:text-brown-500">
+                      {contact.instagram}
+                    </a>
+                  </div>
+                </li>
+              </Reveal>
 
-              <li className="flex items-start gap-4">
-                <IconBadge>
-                  <ClockIcon />
-                </IconBadge>
-                <div className="w-full">
-                  <Label>Horário</Label>
-                  <ul className="mt-2 space-y-1.5">
-                    {schedule.map((entry) => (
-                      <li
-                        key={entry.days}
-                        className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-0.5"
-                      >
-                        <span className="font-medium text-brown-700">{entry.days}</span>
-                        <span
-                          className={
-                            entry.hours === 'Encerrado'
-                              ? 'text-sm italic text-brown-300'
-                              : 'text-sm font-medium text-brown-500'
-                          }
-                        >
-                          {entry.hours}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
+              <Reveal delay={330}>
+                <li className="flex items-start gap-4">
+                  <IconBadge><ClockIcon /></IconBadge>
+                  <div className="w-full">
+                    <Label>Horário</Label>
+                    <ul className="mt-2 space-y-1.5">
+                      {schedule.map((entry) => (
+                        <li key={entry.days} className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-0.5">
+                          <span className="font-medium text-brown-700">{entry.days}</span>
+                          <span className={entry.hours === 'Encerrado' ? 'text-sm italic text-brown-300' : 'text-sm font-medium text-brown-500'}>
+                            {entry.hours}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </li>
+              </Reveal>
             </ul>
           </div>
 

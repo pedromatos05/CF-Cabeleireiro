@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Reveal from '@/components/ui/Reveal'
 
 // ⬇️ EDITA AQUI: caminho da foto das fundadoras em /client/public/
 const donasPhoto = '/Fundadoras.jpeg'
@@ -23,14 +24,14 @@ export default function Team() {
 
         <div className="mx-auto grid max-w-5xl items-start gap-10 md:grid-cols-2 lg:gap-12">
           {/* Foto das fundadoras */}
-          <div className="relative aspect-square overflow-hidden rounded-2xl border border-cream-200 bg-gradient-to-br from-brown-200 to-brown-400 shadow-sm">
+          <div className="group relative aspect-square overflow-hidden rounded-2xl border border-cream-200 bg-gradient-to-br from-brown-200 to-brown-400 shadow-sm">
             {donasPhoto ? (
               <Image
                 src={donasPhoto}
                 alt="As fundadoras do CF Cabeleireiro"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
             ) : (
               <div className="flex h-full w-full items-center justify-center px-6 text-center">
@@ -51,10 +52,12 @@ export default function Team() {
             </p>
             <ul className="mt-6 space-y-3">
               {founders.map((founder, index) => (
-                <li key={index} className="border-l-2 border-brown-300 pl-4">
-                  <p className="font-bold text-brown-800">{founder.name}</p>
-                  <p className="text-sm uppercase tracking-wider text-brown-300">{founder.role}</p>
-                </li>
+                <Reveal key={index} variant="left" delay={index * 140}>
+                  <li className="border-l-2 border-brown-300 pl-4">
+                    <p className="font-bold text-brown-800">{founder.name}</p>
+                    <p className="text-sm uppercase tracking-wider text-brown-300">{founder.role}</p>
+                  </li>
+                </Reveal>
               ))}
             </ul>
           </div>
