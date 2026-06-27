@@ -17,8 +17,9 @@ export default function TendenciasPage() {
   if (!season) notFound()
 
   return (
-    /* Ocupa exatamente o ecrã, sem scroll vertical */
-    <div className="flex h-screen flex-col overflow-hidden pt-16">
+    /* Ocupa exatamente o ecrã abaixo da navbar (o <main> já tem pt-16),
+       sem scroll vertical */
+    <div className="flex h-[calc(100vh-4rem)] flex-col overflow-hidden">
       {/* Cabeçalho compacto */}
       <header className="shrink-0 border-b border-cream-200 bg-gradient-to-b from-white to-cream-50">
         <div className="container mx-auto max-w-3xl px-4 py-4 text-center sm:py-5 sm:px-6">
