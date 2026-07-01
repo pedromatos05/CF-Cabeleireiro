@@ -60,10 +60,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       data-scroll-behavior="smooth"
       className={`${sans.variable} ${display.variable}`}
     >
-      <body>
+      <body className="flex min-h-dvh flex-col">
         <StructuredData />
         <Navbar />
-        <main className="pt-16">{children}</main>
+        <main className="flex-1 pt-16">{children}</main>
         <Footer />
         <CookieBanner />
       </body>

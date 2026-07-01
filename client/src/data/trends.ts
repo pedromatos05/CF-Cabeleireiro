@@ -39,7 +39,14 @@ export const seasons: Season[] = [
     period: 'Junho – Setembro',
     intro:
       'Com o calor, o cabelo pede leveza. No verão apostamos em cortes soltos e cores iluminadas pelo sol, fáceis de cuidar mesmo nos dias de praia.',
-    looks: [],
+    looks: [
+      { name: '', image: '/tendencias/verao/verao-1.jpg' },
+      { name: '', image: '/tendencias/verao/verao-2.jpg' },
+      { name: '', image: '/tendencias/verao/verao-3.jpg' },
+      { name: '', image: '/tendencias/verao/verao-4.jpg' },
+      { name: '', image: '/tendencias/verao/verao-5.jpg' },
+      { name: '', image: '/tendencias/verao/verao-6.jpg' },
+    ],
   },
   {
     slug: 'outono',

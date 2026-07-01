@@ -9,44 +9,68 @@ export const metadata: Metadata = {
 /* -------------------------------------------------------------------------- */
 /*  Dados do portfólio                                                         */
 /*                                                                            */
-/*  ⬇️ EDITA AQUI: para adicionar/remover fotos basta editar os arrays abaixo. */
-/*  As imagens vão para /client/public/images/trabalhos/ com estes nomes.      */
-/*                                                                            */
-/*  NOTA: enquanto a foto não estiver em /public/images/trabalhos/, deixa o    */
-/*  `src` comentado — assim aparece o espaço "Foto em breve" em vez de uma     */
-/*  imagem partida. Quando adicionares a foto, descomenta o `src` respetivo.   */
+/*  ⬇️ EDITA AQUI: cada secção (título) corresponde a uma pasta em            */
+/*  /client/public/images/trabalhos/<pasta>/. Para adicionar fotos, coloca-as  */
+/*  na pasta respetiva e acrescenta um objeto { src, alt } ao array.           */
 /* -------------------------------------------------------------------------- */
 
 const portfolio: PortfolioCategory[] = [
   {
-    name: 'Cor',
+    name: 'Balayage',
     photos: [
-      { /* src: '/images/trabalhos/cor-1.jpg', */ alt: 'Trabalho de coloração 1' },
-      { /* src: '/images/trabalhos/cor-2.jpg', */ alt: 'Balayage 2' },
-      { /* src: '/images/trabalhos/cor-3.jpg', */ alt: 'Blond balayage 3' },
-      { /* src: '/images/trabalhos/cor-4.jpg', */ alt: 'Madeixas 4' },
+      { src: '/images/trabalhos/balayage/1.jpg', alt: 'Balayage' },
+      { src: '/images/trabalhos/balayage/2.jpg', alt: 'Balayage' },
     ],
   },
   {
-    name: 'Cortes',
+    name: 'Blond Balayage',
     photos: [
-      { /* src: '/images/trabalhos/cortes-1.jpg', */ alt: 'Corte 1' },
-      { /* src: '/images/trabalhos/cortes-2.jpg', */ alt: 'Corte 2' },
-      { /* src: '/images/trabalhos/cortes-3.jpg', */ alt: 'Corte 3' },
+      { src: '/images/trabalhos/blond-balayage/1.jpg', alt: 'Blond balayage' },
+      { src: '/images/trabalhos/blond-balayage/2.jpg', alt: 'Blond balayage' },
+      { src: '/images/trabalhos/blond-balayage/3.jpg', alt: 'Blond balayage' },
     ],
   },
   {
-    name: 'Penteados',
+    name: 'Coloração',
     photos: [
-      { /* src: '/images/trabalhos/penteados-1.jpg', */ alt: 'Penteado 1' },
-      { /* src: '/images/trabalhos/penteados-3.jpg', */ alt: 'Penteado para evento 3' },
+      { src: '/images/trabalhos/coloracao/1.jpg', alt: 'Coloração' },
+      { src: '/images/trabalhos/coloracao/2.jpg', alt: 'Coloração' },
     ],
   },
   {
-    name: 'Tratamentos',
+    name: 'Hidratação Botox',
     photos: [
-      { /* src: '/images/trabalhos/tratamentos-1.jpg', */ alt: 'Tratamento 1' },
-      { /* src: '/images/trabalhos/tratamentos-2.jpg', */ alt: 'Tratamento 2' },
+      { src: '/images/trabalhos/hidratacao-botox/1.jpg', alt: 'Hidratação botox' },
+      { src: '/images/trabalhos/hidratacao-botox/2.jpg', alt: 'Hidratação botox' },
+    ],
+  },
+  {
+    name: 'Lisos',
+    photos: [
+      { src: '/images/trabalhos/lisos/1.jpg', alt: 'Cabelo liso' },
+      { src: '/images/trabalhos/lisos/2.jpg', alt: 'Cabelo liso' },
+    ],
+  },
+  {
+    name: 'Noiva',
+    photos: [
+      { src: '/images/trabalhos/noiva/1.jpg', alt: 'Penteado de noiva' },
+      { src: '/images/trabalhos/noiva/2.jpg', alt: 'Penteado de noiva' },
+      { src: '/images/trabalhos/noiva/3.jpg', alt: 'Penteado de noiva' },
+    ],
+  },
+  {
+    name: 'Penteado',
+    photos: [
+      { src: '/images/trabalhos/penteado/1.jpg', alt: 'Penteado' },
+      { src: '/images/trabalhos/penteado/2.jpg', alt: 'Penteado' },
+    ],
+  },
+  {
+    name: 'Penteado Infantil',
+    photos: [
+      { src: '/images/trabalhos/penteado-infantil/1.jpg', alt: 'Penteado infantil' },
+      { src: '/images/trabalhos/penteado-infantil/2.jpg', alt: 'Penteado infantil' },
     ],
   },
 ]

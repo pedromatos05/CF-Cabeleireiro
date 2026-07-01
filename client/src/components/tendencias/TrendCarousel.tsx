@@ -73,7 +73,7 @@ export default function TrendCarousel({
             {look?.image ? (
               <Image
                 src={look.image}
-                alt={`${look.name} — tendência ${seasonName}`}
+                alt={look.name ? `${look.name} — tendência ${seasonName}` : `Tendência ${seasonName}`}
                 fill
                 sizes="(max-width: 640px) 80vw, 300px"
                 quality={90}
@@ -87,7 +87,7 @@ export default function TrendCarousel({
               </div>
             )}
           </div>
-          {look && (
+          {look?.name && (
             <div className="border-t border-cream-100 px-4 py-4 text-center">
               <h3 className="font-display text-base text-brown-800 sm:text-lg">{look.name}</h3>
               {look.description && (
