@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import PortfolioGallery, { type PortfolioCategory } from '@/components/trabalhos/PortfolioGallery'
+import ServiceGallery, { type Service } from '@/components/trabalhos/ServiceGallery'
 
 export const metadata: Metadata = {
   title: 'Trabalhos',
@@ -7,46 +7,62 @@ export const metadata: Metadata = {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Dados do portfólio                                                         */
+/*  Serviços com fotos                                                         */
 /*                                                                            */
-/*  ⬇️ EDITA AQUI: para adicionar/remover fotos basta editar os arrays abaixo. */
-/*  As imagens vão para /client/public/images/trabalhos/ com estes nomes.      */
-/*                                                                            */
-/*  NOTA: enquanto a foto não estiver em /public/images/trabalhos/, deixa o    */
-/*  `src` comentado — assim aparece o espaço "Foto em breve" em vez de uma     */
-/*  imagem partida. Quando adicionares a foto, descomenta o `src` respetivo.   */
+/*  ⬇️ EDITA AQUI: cada serviço tem uma pasta em /client/public/servicos/.     */
+/*  A 1ª foto do array é a CAPA mostrada na grelha; ao clicar na capa abre-se  */
+/*  o serviço e vê-se as restantes fotos.                                      */
 /* -------------------------------------------------------------------------- */
 
-const portfolio: PortfolioCategory[] = [
+const services: Service[] = [
   {
-    name: 'Cor',
+    name: 'Balayage',
     photos: [
-      { /* src: '/images/trabalhos/cor-1.jpg', */ alt: 'Trabalho de coloração 1' },
-      { /* src: '/images/trabalhos/cor-2.jpg', */ alt: 'Balayage 2' },
-      { /* src: '/images/trabalhos/cor-3.jpg', */ alt: 'Blond balayage 3' },
-      { /* src: '/images/trabalhos/cor-4.jpg', */ alt: 'Madeixas 4' },
+      { src: '/servicos/balayage/1.jpg', alt: 'Balayage — CF Cabeleireiro' },
+      { src: '/servicos/balayage/2.jpg', alt: 'Balayage — resultado' },
     ],
   },
   {
-    name: 'Cortes',
+    name: 'Blond Balayage',
     photos: [
-      { /* src: '/images/trabalhos/cortes-1.jpg', */ alt: 'Corte 1' },
-      { /* src: '/images/trabalhos/cortes-2.jpg', */ alt: 'Corte 2' },
-      { /* src: '/images/trabalhos/cortes-3.jpg', */ alt: 'Corte 3' },
+      { src: '/servicos/blond-balayage/1.jpg', alt: 'Blond balayage — CF Cabeleireiro' },
+      { src: '/servicos/blond-balayage/2.jpg', alt: 'Blond balayage — resultado' },
+      { src: '/servicos/blond-balayage/3.jpg', alt: 'Blond balayage — detalhe' },
     ],
   },
   {
-    name: 'Penteados',
+    name: 'Coloração',
     photos: [
-      { /* src: '/images/trabalhos/penteados-1.jpg', */ alt: 'Penteado 1' },
-      { /* src: '/images/trabalhos/penteados-3.jpg', */ alt: 'Penteado para evento 3' },
+      { src: '/servicos/coloracao/1.jpg', alt: 'Coloração — CF Cabeleireiro' },
+      { src: '/servicos/coloracao/2.jpg', alt: 'Coloração — resultado' },
     ],
   },
   {
-    name: 'Tratamentos',
+    name: 'Alisamento',
     photos: [
-      { /* src: '/images/trabalhos/tratamentos-1.jpg', */ alt: 'Tratamento 1' },
-      { /* src: '/images/trabalhos/tratamentos-2.jpg', */ alt: 'Tratamento 2' },
+      { src: '/servicos/alisamento/1.jpg', alt: 'Alisamento — CF Cabeleireiro' },
+      { src: '/servicos/alisamento/2.jpg', alt: 'Alisamento — resultado' },
+    ],
+  },
+  {
+    name: 'Hidratação Botox',
+    photos: [
+      { src: '/servicos/hidratacao-botox/1.jpg', alt: 'Hidratação Botox — CF Cabeleireiro' },
+      { src: '/servicos/hidratacao-botox/2.jpg', alt: 'Hidratação Botox — resultado' },
+    ],
+  },
+  {
+    name: 'Penteado',
+    photos: [
+      { src: '/servicos/penteado/1.jpg', alt: 'Penteado — CF Cabeleireiro' },
+      { src: '/servicos/penteado/2.jpg', alt: 'Penteado — resultado' },
+    ],
+  },
+  {
+    name: 'Penteado Infantil',
+    photos: [
+      { src: '/servicos/penteado-infantil/1.jpg', alt: 'Penteado infantil — CF Cabeleireiro' },
+      { src: '/servicos/penteado-infantil/2.jpg', alt: 'Penteado infantil — resultado' },
     ],
   },
 ]
@@ -63,11 +79,13 @@ export default function TrabalhosPage() {
             Portfólio
           </p>
           <h1 className="text-3xl font-bold text-brown-800 sm:text-4xl">Os nossos trabalhos</h1>
-          <p className="mt-3 text-brown-500">Resultados reais do nosso salão</p>
+          <p className="mt-3 text-brown-500">
+            Resultados reais do nosso salão. Clique num serviço para ver mais fotos
+          </p>
           <div className="mx-auto mt-4 h-px w-16 bg-brown-300" />
         </div>
 
-        <PortfolioGallery categories={portfolio} />
+        <ServiceGallery services={services} />
       </div>
     </div>
   )

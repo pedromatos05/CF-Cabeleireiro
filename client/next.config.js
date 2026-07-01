@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const path = require('path')
 
 // Content-Security-Policy
 // - 'unsafe-inline' em script/style é necessário porque o Next (App Router)
@@ -47,6 +48,15 @@ const securityHeaders = [
 ]
 
 const nextConfig = {
+  // Raiz do projeto = pasta pai (CF-Cabeleireiro), onde está o node_modules/next
+  // e o package-lock.json. Silencia o aviso de "multiple lockfiles".
+  turbopack: {
+    root: path.join(__dirname, '..'),
+  },
+  // Qualidades de imagem usadas no site (next/image no Next 16 exige a lista).
+  images: {
+    qualities: [75, 90, 100],
+  },
   async headers() {
     return [
       {

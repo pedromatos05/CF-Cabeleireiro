@@ -77,6 +77,45 @@ export const brands: Brand[] = [
         width: 1488,
         height: 2105,
       },
+      {
+        name: 'Repair',
+        description: 'Reparação e nutrição profunda para cabelo danificado.',
+      },
+      {
+        name: 'Hydrate',
+        description: 'Hidratação duradoura e cabelo sem efeito frisado.',
+      },
+      {
+        name: 'Volumize',
+        description: 'Corpo e volume para cabelo fino e frágil.',
+      },
+      {
+        name: 'Smoothen',
+        description: 'Suavidade e controlo do frizz para cabelo espesso e encrespado.',
+      },
+      {
+        name: 'Purify',
+        description: 'Purifica e reequilibra o couro cabeludo.',
+      },
+      {
+        name: 'Solar',
+        description: 'Proteção e cuidado do cabelo exposto ao sol, sal e cloro.',
+      },
+      {
+        name: 'Silver',
+        description: 'Neutraliza tons amarelados em cabelo loiro, grisalho ou branco.',
+      },
+      {
+        name: 'Nativ',
+        description: 'Detox inspirado em spa: purifica e re-energiza o cabelo e o couro cabeludo.',
+        image: '/SystemPro_07_Nativ.jpg',
+        width: 667,
+        height: 667,
+      },
+      {
+        name: 'Man',
+        description: 'Cuidado capilar dedicado ao homem.',
+      },
     ],
   },
   {
