@@ -7,7 +7,13 @@ import { MenuIcon, XIcon } from '@/components/ui/icons'
 
 type NavLink = { href: string; label: string }
 
-export default function MobileMenu({ links }: { links: NavLink[] }) {
+export default function MobileMenu({
+  links,
+  overHero = false,
+}: {
+  links: NavLink[]
+  overHero?: boolean
+}) {
   const [open, setOpen] = useState(false)
 
   // Bloqueia o scroll do fundo enquanto o menu está aberto
@@ -27,7 +33,9 @@ export default function MobileMenu({ links }: { links: NavLink[] }) {
         onClick={() => setOpen((v) => !v)}
         aria-label={open ? 'Fechar menu' : 'Abrir menu'}
         aria-expanded={open}
-        className="relative z-[60] flex h-10 w-10 items-center justify-center rounded-md text-brown-700 transition-colors hover:bg-cream-100"
+        className={`relative z-[60] flex h-10 w-10 items-center justify-center rounded-md transition-colors ${
+          overHero && !open ? 'text-white hover:bg-white/10' : 'text-brown-700 hover:bg-cream-100'
+        }`}
       >
         {open ? <XIcon className="h-6 w-6" /> : <MenuIcon className="h-6 w-6" />}
       </button>
