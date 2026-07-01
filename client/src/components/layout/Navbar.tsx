@@ -5,6 +5,8 @@ const links = [
   { href: '/#sobre', label: 'Espaço' },
   { href: '/#marcas', label: 'Produtos' },
   { href: '/#servicos', label: 'Serviços' },
+  { href: '/trabalhos', label: 'Trabalhos' },
+  { href: '/tendencias', label: 'Tendências' },
   { href: '/#contacto', label: 'Contactos' },
   { href: '/noivas', label: 'Noivas' },
 ]
@@ -25,7 +27,7 @@ export default function Navbar() {
         </Link>
 
         {/* Navegação — centrada na barra (apenas desktop) */}
-        <nav className="absolute left-1/2 hidden -translate-x-1/2 gap-8 text-base font-semibold text-brown-700 md:flex">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 gap-5 text-base font-semibold text-brown-700 md:flex lg:gap-8">
           {links.map((link) => (
             <Link key={link.href} href={link.href} className="hover:text-brown-900">
               {link.label}
