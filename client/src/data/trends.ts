@@ -1,67 +1,29 @@
-// Tendências por estação do ano — cortes/looks que a equipa considera tendência.
-// As fotos são tiradas pela própria equipa do CF Cabeleireiro.
+// Tendências da estação atual — os looks que a equipa do CF Cabeleireiro elege
+// como tendência. Todas as fotos são captadas no nosso salão, em clientes reais.
 //
-// ⬇️ COMO ADICIONAR UM LOOK A UMA ESTAÇÃO:
-// 1. Coloca a foto em /client/public/tendencias/ (cria a pasta se não existir).
-// 2. Adiciona um objeto ao array `looks` da estação:
-//      { name: 'Nome do corte', description: 'Breve descrição', image: '/tendencias/foto.jpg', width: 1080, height: 1350 }
-// 3. `width`/`height` são as dimensões reais da foto (para manter a proporção certa).
-//    Enquanto não houver foto, aparece um espaço com "Foto em breve".
+// ⬇️ COMO ATUALIZAR (ex.: mudar de estação):
+// 1. Coloca as fotos em /client/public/tendencias/<estacao>/.
+// 2. Atualiza `name`, `period`, `intro` e a lista `images` em baixo.
+//    As imagens aparecem num carrossel que roda automaticamente.
 
-export type TrendLook = {
-  name: string
-  description?: string
-  image?: string
-  width?: number
-  height?: number
-}
-
-export type Season = {
-  slug: 'primavera' | 'verao' | 'outono' | 'inverno'
+export type SeasonTrends = {
   name: string
   period: string // época do ano
   intro: string // pequena introdução à estação
-  looks: TrendLook[]
+  images: string[] // fotos que rodam no carrossel
 }
 
-export const seasons: Season[] = [
-  {
-    slug: 'primavera',
-    name: 'Primavera',
-    period: 'Março – Maio',
-    intro:
-      'Cortes leves e luminosos que acompanham a renovação da estação — frescura, movimento e tons naturais.',
-    looks: [],
-  },
-  {
-    slug: 'verao',
-    name: 'Verão',
-    period: 'Junho – Setembro',
-    intro:
-      'Com o calor, o cabelo pede leveza. No verão apostamos em cortes soltos e cores iluminadas pelo sol, fáceis de cuidar mesmo nos dias de praia.',
-    looks: [
-      { name: '', image: '/tendencias/verao/verao-1.jpg' },
-      { name: '', image: '/tendencias/verao/verao-2.jpg' },
-      { name: '', image: '/tendencias/verao/verao-3.jpg' },
-      { name: '', image: '/tendencias/verao/verao-4.jpg' },
-      { name: '', image: '/tendencias/verao/verao-5.jpg' },
-      { name: '', image: '/tendencias/verao/verao-6.jpg' },
-    ],
-  },
-  {
-    slug: 'outono',
-    name: 'Outono',
-    period: 'Setembro – Dezembro',
-    intro:
-      'Tons quentes e cortes elegantes que marcam o regresso à rotina — sofisticação e profundidade de cor.',
-    looks: [],
-  },
-  {
-    slug: 'inverno',
-    name: 'Inverno',
-    period: 'Dezembro – Março',
-    intro:
-      'Cortes intemporais e cuidados intensos para proteger o cabelo do frio — brilho, definição e elegância.',
-    looks: [],
-  },
-]
+export const currentSeason: SeasonTrends = {
+  name: 'Verão',
+  period: 'Junho – Setembro',
+  intro:
+    'Looks práticos e cheios de vida, pensados para o calor — texturas soltas, reflexos solares e fácil manutenção.',
+  images: [
+    '/tendencias/verao/verao-1.jpg',
+    '/tendencias/verao/verao-2.jpg',
+    '/tendencias/verao/verao-3.jpg',
+    '/tendencias/verao/verao-4.jpg',
+    '/tendencias/verao/verao-5.jpg',
+    '/tendencias/verao/verao-6.jpg',
+  ],
+}

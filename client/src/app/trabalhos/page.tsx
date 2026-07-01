@@ -1,81 +1,13 @@
 import type { Metadata } from 'next'
-import PortfolioGallery, { type PortfolioCategory } from '@/components/trabalhos/PortfolioGallery'
+import Image from 'next/image'
+import Link from 'next/link'
+import { workCategories } from '@/data/works'
 
 export const metadata: Metadata = {
   title: 'Trabalhos',
-  description: 'Portfólio do CF Cabeleireiro — resultados reais de cor, cortes, penteados e tratamentos.',
+  description:
+    'O portfólio do CF Cabeleireiro — balayage, coloração, penteados de noiva, tratamentos e muito mais. Resultados reais do nosso salão.',
 }
-
-/* -------------------------------------------------------------------------- */
-/*  Dados do portfólio                                                         */
-/*                                                                            */
-/*  ⬇️ EDITA AQUI: cada secção (título) corresponde a uma pasta em            */
-/*  /client/public/images/trabalhos/<pasta>/. Para adicionar fotos, coloca-as  */
-/*  na pasta respetiva e acrescenta um objeto { src, alt } ao array.           */
-/* -------------------------------------------------------------------------- */
-
-const portfolio: PortfolioCategory[] = [
-  {
-    name: 'Balayage',
-    photos: [
-      { src: '/images/trabalhos/balayage/1.jpg', alt: 'Balayage' },
-      { src: '/images/trabalhos/balayage/2.jpg', alt: 'Balayage' },
-    ],
-  },
-  {
-    name: 'Blond Balayage',
-    photos: [
-      { src: '/images/trabalhos/blond-balayage/1.jpg', alt: 'Blond balayage' },
-      { src: '/images/trabalhos/blond-balayage/2.jpg', alt: 'Blond balayage' },
-      { src: '/images/trabalhos/blond-balayage/3.jpg', alt: 'Blond balayage' },
-    ],
-  },
-  {
-    name: 'Coloração',
-    photos: [
-      { src: '/images/trabalhos/coloracao/1.jpg', alt: 'Coloração' },
-      { src: '/images/trabalhos/coloracao/2.jpg', alt: 'Coloração' },
-    ],
-  },
-  {
-    name: 'Hidratação Botox',
-    photos: [
-      { src: '/images/trabalhos/hidratacao-botox/1.jpg', alt: 'Hidratação botox' },
-      { src: '/images/trabalhos/hidratacao-botox/2.jpg', alt: 'Hidratação botox' },
-    ],
-  },
-  {
-    name: 'Lisos',
-    photos: [
-      { src: '/images/trabalhos/lisos/1.jpg', alt: 'Cabelo liso' },
-      { src: '/images/trabalhos/lisos/2.jpg', alt: 'Cabelo liso' },
-    ],
-  },
-  {
-    name: 'Noiva',
-    photos: [
-      { src: '/images/trabalhos/noiva/1.jpg', alt: 'Penteado de noiva' },
-      { src: '/images/trabalhos/noiva/2.jpg', alt: 'Penteado de noiva' },
-      { src: '/images/trabalhos/noiva/3.jpg', alt: 'Penteado de noiva' },
-    ],
-  },
-  {
-    name: 'Penteado',
-    photos: [
-      { src: '/images/trabalhos/penteado/1.jpg', alt: 'Penteado' },
-      { src: '/images/trabalhos/penteado/2.jpg', alt: 'Penteado' },
-    ],
-  },
-  {
-    name: 'Penteado Infantil',
-    photos: [
-      { src: '/images/trabalhos/penteado-infantil/1.jpg', alt: 'Penteado infantil' },
-      { src: '/images/trabalhos/penteado-infantil/2.jpg', alt: 'Penteado infantil' },
-    ],
-  },
-]
-
-/* -------------------------------------------------------------------------- */
 
 export default function TrabalhosPage() {
   return (
@@ -87,11 +19,38 @@ export default function TrabalhosPage() {
             Portfólio
           </p>
           <h1 className="text-3xl font-bold text-brown-800 sm:text-4xl">Os nossos trabalhos</h1>
-          <p className="mt-3 text-brown-500">Resultados reais do nosso salão</p>
+          <p className="mt-3 text-brown-500">Escolha um tema para ver mais resultados reais</p>
           <div className="mx-auto mt-4 h-px w-16 bg-brown-300" />
         </div>
 
-        <PortfolioGallery categories={portfolio} />
+        {/* Grelha de temas — cada capa abre a galeria do tema */}
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-4">
+          {workCategories.map((category) => (
+            <Link
+              key={category.slug}
+              href={`/trabalhos/${category.slug}`}
+              className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-cream-100 shadow-sm transition-shadow hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-brown-400 focus:ring-offset-2"
+            >
+              <Image
+                src={category.cover}
+                alt={category.name}
+                fill
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
+                className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+              />
+              {/* Gradiente + título */}
+              <div className="absolute inset-0 bg-gradient-to-t from-brown-900/70 via-brown-900/10 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-4 text-center">
+                <h2 className="font-display text-lg text-white drop-shadow-sm sm:text-xl">
+                  {category.name}
+                </h2>
+                <span className="mt-1 inline-block text-xs font-medium uppercase tracking-[0.2em] text-cream-100/90">
+                  Ver fotos
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   )
