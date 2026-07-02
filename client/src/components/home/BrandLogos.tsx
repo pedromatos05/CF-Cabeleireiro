@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { brands } from '@/data/brands'
+import Reveal from '@/components/ui/Reveal'
 
 export default function BrandLogos() {
   return (
@@ -22,30 +23,32 @@ export default function BrandLogos() {
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-8">
-          {brands.map((brand) => (
-            <div key={brand.slug} className="group flex max-w-xs flex-col items-center text-center">
-              <Link
-                href={`/marcas/${brand.slug}`}
-                aria-label={`Ver produtos ${brand.name}`}
-                className="flex h-48 w-48 items-center justify-center rounded-full border border-cream-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-brown-200 hover:shadow-xl sm:h-56 sm:w-56"
-              >
-                <Image
-                  src={brand.logo}
-                  alt={brand.name}
-                  width={180}
-                  height={180}
-                  className={`h-full w-full object-contain grayscale transition-all duration-500 group-hover:scale-110 group-hover:grayscale-0 ${brand.imgClass ?? ''}`}
-                />
-              </Link>
-              <Link
-                href={`/marcas/${brand.slug}`}
-                className="mt-6 text-lg font-bold text-brown-800 underline-offset-4 transition-colors hover:text-brown-600 hover:underline"
-              >
-                {brand.name}
-              </Link>
-              <p className="mt-2 text-sm text-brown-500">{brand.shortDescription}</p>
-            </div>
+        <div className="flex flex-wrap items-stretch justify-center gap-8">
+          {brands.map((brand, index) => (
+            <Reveal key={brand.slug} delay={index * 150}>
+              <div className="group flex h-full max-w-xs flex-col items-center text-center">
+                <Link
+                  href={`/marcas/${brand.slug}`}
+                  aria-label={`Ver produtos ${brand.name}`}
+                  className="relative flex h-48 w-48 items-center justify-center overflow-hidden rounded-full border border-cream-200 bg-white p-8 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-brown-200 hover:shadow-xl sm:h-56 sm:w-56"
+                >
+                  <Image
+                    src={brand.logo}
+                    alt={brand.name}
+                    width={180}
+                    height={180}
+                    className={`h-full w-full object-contain grayscale transition-all duration-500 group-hover:scale-110 group-hover:grayscale-0 ${brand.imgClass ?? ''}`}
+                  />
+                </Link>
+                <Link
+                  href={`/marcas/${brand.slug}`}
+                  className="mt-6 text-lg font-bold text-brown-800 underline-offset-4 transition-colors hover:text-brown-600 hover:underline"
+                >
+                  {brand.name}
+                </Link>
+                <p className="mt-2 text-sm text-brown-500">{brand.shortDescription}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

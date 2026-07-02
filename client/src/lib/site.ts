@@ -1,10 +1,11 @@
 // URL público do site (usado em metadata, sitemap e robots).
 //
-// ⬇️ EM PRODUÇÃO: define a variável de ambiente NEXT_PUBLIC_SITE_URL com o
-// domínio final (ex.: https://www.cfcabeleireiro.pt). Enquanto não existir,
-// usa-se o valor abaixo como placeholder — atualiza-o quando tiveres o domínio.
+// ⬇️ EM PRODUÇÃO: idealmente define a variável de ambiente NEXT_PUBLIC_SITE_URL
+// com o domínio final. Se não existir, usa-se o domínio real abaixo.
+// IMPORTANTE: tem de ser EXATAMENTE o domínio que serve o site (com/sem www),
+// senão os canonical/sitemap apontam para o sítio errado e prejudicam o SEO.
 export const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.cfcabeleireiro.pt'
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://cf-cabeleireiro.pt'
 ).replace(/\/$/, '')
 
 // Dados do salão usados nos dados estruturados (JSON-LD) e na partilha.

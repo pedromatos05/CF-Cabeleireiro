@@ -32,8 +32,7 @@ export const brands: Brand[] = [
     logo: '/SystemProfessional.png',
     shortDescription:
       'Cuidados capilares de alta performance e personalizados para o seu cabelo. Utilizamos fórmulas científicas avançadas para reparar profundamente a fibra capilar e garantir um brilho saudável e duradouro.',
-    intro:
-      'A System Professional, da Wella Professionals, oferece cuidados capilares à medida, com diagnóstico personalizado. Cada gama responde a uma necessidade específica do cabelo e do couro cabeludo, com fórmulas de alta cosmética para resultados duradouros.',
+    intro: `A System Professional, da Wella Professionals, oferece cuidados capilares à medida, com diagnóstico personalizado. Cada gama responde a uma necessidade específica do cabelo e do couro cabeludo, com fórmulas de alta cosmética para resultados duradouros. <span style='text-decoration: underline; text-decoration-color: #854d27;'>No nosso salão, vendemos todos os produtos associados a cada gama</span>, desde champô, condicionador, máscara, óleos e outros cuidados, para que possa continuar o seu tratamento em casa. Veja abaixo as gamas de revenda do salão.`,
     productLayout: 'square3',
     gamas: [
       {
@@ -77,6 +76,53 @@ export const brands: Brand[] = [
         image: '/SystemPro_02_Liquid-Hair.jpg',
         width: 1488,
         height: 2105,
+      },
+      {
+        name: 'Repair',
+        description: 'Reparação e nutrição profunda para cabelo danificado.',
+        image: '/system_shampoo_repair.jpg',
+      },
+      {
+        name: 'Hydrate',
+        description: 'Hidratação duradoura e cabelo sem efeito frisado.',
+        image: '/system_hydrate.webp',
+      },
+      {
+        name: 'Volumize',
+        description: 'Corpo e volume para cabelo fino e frágil.',
+        image: '/system_volumize.jpg',
+      },
+      {
+        name: 'Smoothen',
+        description: 'Suavidade e controlo do frizz para cabelo espesso e encrespado.',
+        image: '/system_shotem.jpg',
+      },
+      {
+        name: 'Purify',
+        description: 'Purifica e reequilibra o couro cabeludo.',
+        image: '/system_purify.jpg',
+      },
+      {
+        name: 'Solar',
+        description: 'Proteção e cuidado do cabelo exposto ao sol, sal e cloro.',
+        image: '/system_solar.jpg',
+      },
+      {
+        name: 'Silver',
+        description: 'Neutraliza tons amarelados em cabelo loiro, grisalho ou branco.',
+        image: '/system_silver.jng.avif',
+      },
+      {
+        name: 'Nativ',
+        description: 'Detox inspirado em spa: purifica e re-energiza o cabelo e o couro cabeludo.',
+        image: '/SystemPro_07_Nativ.jpg',
+        width: 667,
+        height: 667,
+      },
+      {
+        name: 'Man',
+        description: 'Cuidado capilar dedicado ao homem.',
+        image: '/system_man.jpg',
       },
     ],
   },
