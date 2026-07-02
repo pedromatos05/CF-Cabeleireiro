@@ -4,8 +4,8 @@ import { livroReclamacoes } from '@/data/legal'
 export default function Footer() {
   return (
     <footer className="bg-brown-900">
-      <div className="container mx-auto px-4 py-5 sm:px-6 lg:px-8">
-        <nav className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-cream-200/80">
+      <div className="container mx-auto px-4 py-2.5 sm:px-6 lg:px-8">
+        <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-cream-200/80">
           <Link href="/privacidade" className="transition-colors hover:text-cream-100">
             Política de Privacidade
           </Link>

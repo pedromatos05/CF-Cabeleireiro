@@ -56,7 +56,7 @@ export default async function BrandPage({ params }: { params: Promise<{ slug: st
         <div className="container mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
           <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:gap-10 sm:text-left">
             {/* Logótipo — esquerda */}
-            <div className="flex h-36 w-36 flex-none items-center justify-center rounded-full border border-cream-200 bg-white p-6 shadow-sm sm:h-44 sm:w-44">
+            <div className="mt-2 flex h-32 w-32 flex-none items-center justify-center rounded-full border border-cream-200 bg-white p-5 shadow-sm sm:mt-0 sm:h-40 sm:w-40 sm:p-6">
               <Image
                 src={brand.logo}
                 alt={brand.name}
@@ -73,9 +73,10 @@ export default async function BrandPage({ params }: { params: Promise<{ slug: st
                   Sub-marca da {brand.parent}
                 </p>
               )}
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-brown-500 sm:text-base">
-                {brand.intro}
-              </p>
+              <p
+                className="mt-3 max-w-2xl text-sm leading-relaxed text-brown-500 sm:text-base"
+                dangerouslySetInnerHTML={{ __html: brand.intro }}
+              />
             </div>
           </div>
         </div>
@@ -102,7 +103,7 @@ export default async function BrandPage({ params }: { params: Promise<{ slug: st
                       alt={`Produtos ${brand.name} ${gama.name}`}
                       fill
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      quality={90}
+                      quality={100}
                       className="object-cover"
                     />
                   ) : (
@@ -129,7 +130,7 @@ export default async function BrandPage({ params }: { params: Promise<{ slug: st
             {wideGamas.map((gama) => (
               <div
                 key={gama.name}
-                className="relative overflow-hidden rounded-2xl bg-black pb-5 shadow-sm ring-1 ring-black/5 transition duration-300 ease-out hover:z-10 hover:scale-[1.01] hover:shadow-xl"
+                className="relative overflow-hidden rounded-2xl bg-black pb-5 shadow-sm ring-1 ring-black/5 transition duration-300 ease-out hover:z-10 hover:scale-[1.02] hover:shadow-xl"
               >
                 {gama.image ? (
                   <div className="relative aspect-[2912/1139] w-full">
@@ -164,7 +165,7 @@ export default async function BrandPage({ params }: { params: Promise<{ slug: st
                 {narrowGamas.map((gama) => (
                   <div
                     key={gama.name}
-                    className={`relative h-[320px] overflow-hidden rounded-2xl bg-black shadow-sm ring-1 ring-black/5 transition duration-300 ease-out hover:z-10 hover:scale-[1.02] hover:shadow-xl sm:h-[440px] ${
+                    className={`relative h-[320px] overflow-hidden rounded-2xl bg-black shadow-sm ring-1 ring-black/5 transition duration-300 ease-out hover:z-10 hover:scale-[1.03] hover:shadow-xl sm:h-[440px] ${
                       gama.name === 'Potion 9' ? '' : 'pb-4 sm:pb-6'
                     }`}
                   >

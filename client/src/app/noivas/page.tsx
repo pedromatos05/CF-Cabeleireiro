@@ -17,19 +17,17 @@ const servicos = [
 ]
 
 /* -------------------------------------------------------------------------- */
-/*  ⬇️ EDITA AQUI: fotos de casamentos. Coloca as imagens em                   */
-/*  /client/public/images/noivas/ e substitui os espaços "Foto em breve"      */
-/*  por { src: '/images/noivas/casamento-X.jpg', alt: '...' }.                 */
+/*  ⬇️ EDITA AQUI: fotos de casamentos em /client/public/noivas/.              */
 /* -------------------------------------------------------------------------- */
 
 const noivas: PortfolioCategory[] = [
   {
-    name: 'Casamentos',
+    // Sem nome: a galeria não mostra cabeçalho (a página já se chama "Noivas").
+    name: '',
     photos: [
-      { src: '/Services/Casamento.png', alt: 'Noiva no seu grande dia' },
-      { src: '/penteado_noiva.jpeg', alt: 'Penteado de noiva' },
-      { src: '/matilhagem_noiva.jpeg', alt: 'Maquilhagem de noiva' },
-      { src: '/vestido_noiva.jpeg', alt: 'Noiva no dia do casamento' },
+      { src: '/noivas/1.jpg', alt: 'Penteado de noiva no CF Cabeleireiro' },
+      { src: '/noivas/2.jpg', alt: 'Noiva pronta para o grande dia' },
+      { src: '/noivas/3.jpg', alt: 'Penteado e maquilhagem de noiva' },
     ],
   },
 ]

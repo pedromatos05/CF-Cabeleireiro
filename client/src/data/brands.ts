@@ -32,8 +32,7 @@ export const brands: Brand[] = [
     logo: '/SystemProfessional.png',
     shortDescription:
       'Cuidados capilares de alta performance e personalizados para o seu cabelo. Utilizamos fórmulas científicas avançadas para reparar profundamente a fibra capilar e garantir um brilho saudável e duradouro.',
-    intro:
-      'A System Professional, da Wella Professionals, oferece cuidados capilares à medida, com diagnóstico personalizado. Cada gama responde a uma necessidade específica do cabelo e do couro cabeludo, com fórmulas de alta cosmética para resultados duradouros.',
+    intro: `A System Professional, da Wella Professionals, oferece cuidados capilares à medida, com diagnóstico personalizado. Cada gama responde a uma necessidade específica do cabelo e do couro cabeludo, com fórmulas de alta cosmética para resultados duradouros. <span style='text-decoration: underline; text-decoration-color: #854d27;'>No nosso salão, vendemos todos os produtos associados a cada gama</span>, desde champô, condicionador, máscara, óleos e outros cuidados, para que possa continuar o seu tratamento em casa. Veja abaixo as gamas de revenda do salão.`,
     productLayout: 'square3',
     gamas: [
       {

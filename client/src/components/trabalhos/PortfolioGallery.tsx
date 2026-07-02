@@ -67,11 +67,15 @@ export default function PortfolioGallery({ categories }: { categories: Portfolio
         {categories.map((category, categoryIndex) => {
           let realCounter = -1
           return (
-            <section key={category.name}>
-              <h2 className="text-center text-lg font-bold uppercase tracking-[0.2em] text-brown-700">
-                {category.name}
-              </h2>
-              <span className="mx-auto mt-2 mb-8 block h-px w-10 bg-brown-300" />
+            <section key={category.name || categoryIndex}>
+              {category.name && (
+                <>
+                  <h2 className="text-center text-lg font-bold uppercase tracking-[0.2em] text-brown-700">
+                    {category.name}
+                  </h2>
+                  <span className="mx-auto mt-2 mb-8 block h-px w-10 bg-brown-300" />
+                </>
+              )}
 
               {/* Fotos centradas — as linhas incompletas ficam ao centro */}
               <div className="flex flex-wrap justify-center gap-4">
@@ -143,7 +147,7 @@ export default function PortfolioGallery({ categories }: { categories: Portfolio
               showRelative(-1)
             }}
             aria-label="Anterior"
-            className="absolute left-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-2xl text-white transition-colors hover:bg-white/20"
+            className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-2xl text-white transition-colors hover:bg-white/20"
           >
             ‹
           </button>
@@ -168,7 +172,7 @@ export default function PortfolioGallery({ categories }: { categories: Portfolio
               showRelative(1)
             }}
             aria-label="Seguinte"
-            className="absolute right-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 text-2xl text-white transition-colors hover:bg-white/20 sm:right-20"
+            className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-2xl text-white transition-colors hover:bg-white/20"
           >
             ›
           </button>

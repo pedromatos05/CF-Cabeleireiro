@@ -24,9 +24,12 @@ export default function ServicesMenu() {
                 {category.items.map((item) => (
                   <li
                     key={item}
-                    className="border-b border-dashed border-cream-200 py-2.5 text-center text-brown-500 transition-colors last:border-0 hover:text-brown-700"
+                    className="group border-b border-dashed border-cream-200 py-2.5 text-center last:border-0"
                   >
-                    {item}
+                    <span className="relative inline-block text-brown-500 transition-colors duration-300 group-hover:text-brown-800">
+                      {item}
+                      <span className="absolute -bottom-px left-1/2 h-px w-0 -translate-x-1/2 bg-brown-300 transition-all duration-300 group-hover:w-full" />
+                    </span>
                   </li>
                 ))}
               </ul>
